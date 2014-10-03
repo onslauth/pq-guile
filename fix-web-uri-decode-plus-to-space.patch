@@ -1,0 +1,30 @@
+--- guile-2.0.11/module/web/uri.scm.orig	2013-03-18 23:30:13.000000000 +0200
++++ guile-2.0.11/module/web/uri.scm	2014-07-15 16:08:47.677521012 +0200
+@@ -304,7 +304,7 @@
+ (define hex-chars
+   (string->char-set "0123456789abcdefABCDEF"))
+ 
+-(define* (uri-decode str #:key (encoding "utf-8"))
++(define* (uri-decode str #:key (encoding "utf-8") (form? #t))
+   "Percent-decode the given STR, according to ENCODING,
+ which should be the name of a character encoding.
+ 
+@@ -330,7 +330,7 @@
+                (if (< i len)
+                    (let ((ch (string-ref str i)))
+                      (cond
+-                      ((eqv? ch #\+)
++                      ((and (eqv? ch #\+) form?)
+                        (put-u8 port (char->integer #\space))
+                        (lp (1+ i)))
+                       ((and (< (+ i 2) len) (eqv? ch #\%)
+@@ -412,7 +412,8 @@
+ For example, ‘\"/foo/bar%20baz/\"’ decodes to the two-element list,
+ ‘(\"foo\" \"bar baz\")’."
+   (filter (lambda (x) (not (string-null? x)))
+-          (map uri-decode (string-split path #\/))))
++          (map (lambda (s) (uri-decode s #:form? #f))
++               (string-split path #\/))))
+ 
+ (define (encode-and-join-uri-path parts)
+   "URI-encode each element of PARTS, which should be a list of
