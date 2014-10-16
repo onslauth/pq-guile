@@ -1,8 +1,8 @@
-pq-gcc
-pq-bdw-gc
-pq-libtool
-pq-gmp
-pq-libiconv
-pq-libunistring
-pq-libffi
-pq-readline
+part: 'pq-gcc'
+part: 'pq-bdw-gc'
+part: 'pq-libtool'
+part: 'pq-gmp'
+part: 'pq-libiconv'
+part: 'pq-libunistring'
+part: 'pq-libffi'
+part: 'pq-readline'
