@@ -1,9 +1,0 @@
---- guile-2.0.11/meta/guile-2.0.pc.in.orig	Fri Oct  3 11:50:38 SAST 2014
-+++ guile-2.0.11/meta/guile-2.0.pc.in	Fri Oct  3 11:50:38 SAST 2014
-@@ -18,5 +18,5 @@
- Libs.private: @LIB_CLOCK_GETTIME@ @LIBGMP@ @LIBLTDL@ @LIBFFI_LIBS@	\
-   @LIBUNISTRING@ @GUILE_LIBS@ @LIBICONV@ @LIBINTL@ @LIBSOCKET@		\
-   @SERVENT_LIB@ @HOSTENT_LIB@ @GETADDRINFO_LIB@ @INET_NTOP_LIB@		\
-   @INET_PTON_LIB@
--Cflags: -I${pkgincludedir}/@GUILE_EFFECTIVE_VERSION@ @GUILE_CFLAGS@ @BDW_GC_CFLAGS@
-+Cflags: -I${pkgincludedir}/@GUILE_EFFECTIVE_VERSION@ @CFLAGS@ @GUILE_CFLAGS@ @BDW_GC_CFLAGS@
