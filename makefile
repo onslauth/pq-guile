@@ -11,6 +11,8 @@ pq_configure_args += --with-libunistring-prefix=$(pq-libunistring-dir)
 pq_configure_args += --prefix=$(part_dir)
 pq_configure_args += --with-threads
 
+PQ_BIN := guild guile guile-config guile-snarf guile-tools
+
 build-stamp: stage-stamp
 	$(MAKE) -C $(pq_part_name)
 	$(MAKE) -C $(pq_part_name) install install-info DESTDIR=$(stage_dir)
