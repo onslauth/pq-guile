@@ -1,4 +1,4 @@
-part: 'pq-gcc',			branch: '4.9.1', 	url: 'https://github.com/onslauth/pq-gcc-static'
+part: 'pq-gcc',			branch: '4.9.1'
 part: 'pq-bdw-gc',		branch: '7.2f'
 part: 'pq-libtool',		branch: '2.4.2'
 part: 'pq-gmp',			branch: '6.0.0a'
